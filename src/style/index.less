@@ -1,0 +1,70 @@
+@import 'var.less';
+@import 'reset.less';
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  font-synthesis: none;
+  text-size-adjust: 100%;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+html {
+  font-size: 37.5px;
+  font-size: 10vw;
+}
+
+body {
+  font-family: @font-family;
+  // background-color: @background-color;
+}
+
+.page {
+  // background-color: @background-color;
+  height: 100%;
+  padding: 0 @page-padding;
+  background-size: contain;
+
+  &__ios-fix-bottom {
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: @ios-bottom-height;
+    }
+  }
+
+  &__nopad {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 677px) {
+  html {
+    background-color: #eef0f3;
+    box-shadow:
+      0 1px 6px rgb(0 0 0 / 11.8%),
+      0 1px 4px rgb(0 0 0 / 11.8%);
+    font-size: 37.5px !important;
+  }
+
+  body {
+    right: 0;
+    left: 0;
+    max-width: 375px;
+    margin: 0 auto !important;
+  }
+
+  .cr-nav-bar {
+    z-index: 999;
+    right: 0;
+    left: 0;
+    max-width: 375px;
+    margin: 0 auto !important;
+  }
+}
